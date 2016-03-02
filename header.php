@@ -7,4 +7,7 @@
 <div id="wrapper">
 <div id="header">
  <h1>HEADER</h1>
+
+<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Header') ) : endif; ?>
+
 </div>

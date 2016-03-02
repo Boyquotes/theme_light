@@ -1,4 +1,25 @@
 <?php
+
+
+if ( function_exists('register_sidebar') ) {
+    register_sidebar(array(
+        'name' => 'Header',
+	'id' => "sidebar-header",
+        'before_widget' => '<div id="header">',
+        'after_widget' => '</div>',
+        'before_title' => '<h2>',
+        'after_title' => '</h2>',
+    ));
+    register_sidebar(array(
+        'name' => 'Footer',
+	'id' => "sidebar-footer",
+        'before_widget' => '<div id="footer">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+    ));
+}
+
 #CREER LE NOUVEAU TYPE DE POST candidat
 function create_post_type() {
   register_post_type( 'candidat',

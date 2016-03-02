@@ -15,17 +15,38 @@
 <div id="delimiter">
 </div>
 
+<div class="news">
+<?php
+	$args = array(
+		'post_type'  => 'post',
+		'category_name' => 'news',
+	);
+
+
+        // 2. on exécute la query
+        $my_query = new WP_Query($args);
+
+        #LA BOUCLE
+        // 3. on lance la boucle WHILE!
+        if($my_query->have_posts()) : while ($my_query->have_posts() ) : $my_query->the_post();
+		the_title();
+		the_content();
+        endwhile;
+        endif;
+
+?>
+
+</div>
+
+
 <h2> Les candidats </h2>
 <div class="candidat">
 	<?php
-		$args = array(
-			'post_type'  => 'post',
-			'category_name' => 'news',
-		);
 
-		// 2. on exécute la query
-		$my_query = new WP_Query($args);
-#LA BOUCLE
+	// 2. on exécute la query
+	$my_query = new WP_Query($args);
+	
+	#LA BOUCLE
 	// 3. on lance la boucle WHILE!
 	if($my_query->have_posts()) : while ($my_query->have_posts() ) : $my_query->the_post();
 	?>
